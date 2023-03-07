@@ -32,30 +32,18 @@ CREATE TABLE "employees" (
 );
 
 CREATE TABLE "dept_emp" (
-    "dept_emp_id" serial   NOT NULL,
     "emp_no" varchar(10)   NOT NULL,
-    "dept_no" varchar(10)   NOT NULL,
-    CONSTRAINT "pk_dept_emp" PRIMARY KEY (
-        "dept_emp_id"
-     )
+    "dept_no" varchar(10)   NOT NULL
 );
 
 CREATE TABLE "salaries" (
-    "salary_id" serial   NOT NULL,
     "emp_no" varchar(10)   NOT NULL,
-    "salary" decimal   NOT NULL,
-    CONSTRAINT "pk_salaries" PRIMARY KEY (
-        "salary_id"
-     )
+    "salary" decimal   NOT NULL
 );
 
 CREATE TABLE "dept_manager" (
-    "dept_manager_id" serial   NOT NULL,
     "dept_no" varchar(10)   NOT NULL,
-    "emp_no" varchar(10)   NOT NULL,
-    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
-        "dept_manager_id"
-     )
+    "emp_no" varchar(10)   NOT NULL
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
